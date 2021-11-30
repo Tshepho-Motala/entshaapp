@@ -4,10 +4,11 @@
 
 <br>
 <br />
-<h1>Welcome to Delphius</h1>
-<a href="{% url 'job_form' %}">Submit your work here</a>
+<center>
+<h1 style="color: orange;">Welcome to Delphius in {{month}} {{year}}</h1>
+</center>
+{{cal|safe}}
 
 
 
 {% endblock %}
-
