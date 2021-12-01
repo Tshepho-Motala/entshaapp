@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'NGBS',
     'NGMC',
     'del_connect',
+    'members',
     
     
     
@@ -106,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = ('/delphius')
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

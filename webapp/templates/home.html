@@ -16,10 +16,14 @@
 <div class="jumbotron" bg-dark>
     <h1 style="color : #F5831F">Welcome to ENTSHA 2.0 </h1>
     <p class="lead" style="color : #F5831F"><marquee>ENTSHA 2.0 is a web application for New Generation Group's day to day business processes.</marquee></p>
-    <p><a href="http://3.135.17.153/entsha" class="btn btn-warning btn-large">Login NGMC</a></p>
-    <p><a href="http://3.135.17.153/entsha" class="btn btn-warning btn-large">Login delphius</a></p>
-    <p><a href="http://3.135.17.153/entsha" class="btn btn-warning btn-large">Login intelliview</a></p>
-</div>
+
+    <div>
+     
+    <button type="button" class="btn btn-warning">Login NGMC</button>
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-warning">Login Delphius</button></a>
+    <button type="button" class="btn btn-warning">Login Intelliview</button>
+    <button type="button" class="btn btn-warning">Login to PMTAC</button>
+    </div>
 
 
 

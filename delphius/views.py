@@ -29,6 +29,10 @@ def delphius_home(request):
 
         })  
 
+def show_forms(request):
+
+    return render(request, 'delphius/forms.html', {})    
+
 def show_lead(request, New_Lead_id):
     new_lead = New_Lead.objects.get(pk=New_Lead_id)    
     return render(request, 'delphius/show_leads.html', {'new_lead':new_lead})    

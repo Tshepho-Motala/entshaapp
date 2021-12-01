@@ -9,5 +9,6 @@ urlpatterns = [
     path('NGBS/', include('NGBS.urls')),
     path('NGMC/', include('NGMC.urls')),
     path('del_connect/', include('del_connect.urls')),
-    
+    path('members/', include('members.urls')),
+    path('members/', include('django.contrib.auth.urls')),
 ]

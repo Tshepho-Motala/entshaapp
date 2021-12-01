@@ -1,13 +1,19 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
 <br>
 <br />
 <center>
-<h1 style="color: orange;">Welcome to Delphius in {{month}} {{year}}</h1>
+<h1 style="color: orange;">Welcome to Entsha 2.0 application </h1>
+
+
+<p> Please click the forms button to proceed </p>
+
+<a href="{% url 'show-forms' %}"><button type="button" class="btn btn-warning">Forms</button></a> 
+
 </center>
-{{cal|safe}}
+
 
 
 
