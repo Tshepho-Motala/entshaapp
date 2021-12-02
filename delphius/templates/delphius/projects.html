@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">View of all Delphius projects</h1>
+
+<table class="table table-borderless table-striped table-hover">
+{% for New_Project in  view_project %}
+<tr>
+<td style="color:orange;"><a href="{% url 'show-project' New_Project.id %}">{{New_Project}}</a></td>
+<td align="right"><a href="{% url 'update-project' New_Project.id %}" class="btn btn-outline-secondary btn-sm"> Update</a> </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'show-forms' %}" class="btn btn-warning"> Back to forms </a>
+
+
+
+
+{% endblock %}

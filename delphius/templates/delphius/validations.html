@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">View of all Validations</h1>
+
+<table class="table table-borderless table-striped table-hover">
+{% for New_Validation in  view_validation %}
+<tr>
+<td style="color:orange;"><a href="{% url 'show-validation' New_Validation.id %}">{{New_Validation}}</a></td>
+<td align="right"><a href="{% url 'update-validation' New_Validation.id %}" class="btn btn-outline-secondary btn-sm"> Update</a> </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'show-forms' %}" class="btn btn-warning"> Back to forms </a>
+
+
+
+
+{% endblock %}

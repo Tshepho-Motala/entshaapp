@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+<center>
+<h1 style="color: orange;">Welcome to Entsha 2.0 forms </h1>
+
+
+<p> Please select the form you want to submit </p>
+
+<a href="{% url 'add-lead' %}"><button type="button" class="btn btn-warning">New Lead</button></a> 
+<a href="{% url 'add-project' %}"><button type="button" class="btn btn-warning">New Delphius Project</button></a> <br/><br/>
+<a href="{% url 'add-project' %}"><button type="button" class="btn btn-warning">Delphius Interest Validation Form</button></a>
+</center>
+
+
+
+
+{% endblock %}

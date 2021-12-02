@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">Lead:</h1>
+
+<h1>{{new_lead}}</h1>
+<br/>
+
+
+
+<div class="card">
+	<div class="card-header">
+		 
+	</div>
+	<div class="card-body">
+		<h5 class="card-title" style="color:orange;"> Lead: {{ new_lead }}</h5>
+		<p class="card-text" style="color: orange;">
+			
+
+{{ new_lead.site }}<br/>
+{{ new_lead.cont_person }}<br/>
+{{ new_lead.cont_no }}<br/>
+{{ new_lead.address }}<br/>
+{{ new_lead.region }}<br/>
+{{ new_lead.status }}<br/>
+{{ new_lead.employee }}<br/>
+{{ new_lead.started }}<br/>
+{{ new_lead.expected }}<br/>
+{{ new_lead.verified }}<br/>
+{{ new_lead.action }}<br/>
+{{ new_lead.latitude }}<br/>
+{{ new_lead.longitude }}<br/>
+<img src="{{ new_lead.lead_image.url }}"><br/>
+
+
+				
+	</div>
+
+
+
+
+
+{% endblock %}

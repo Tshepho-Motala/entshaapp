@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br/>
+<br/>
+
+<h1 style="color: orange;">Update Delphius Interest Validation</h1>
+
+<form action="" method=POST>
+	{% csrf_token %}
+    {{form.as_p}}
+	<br/>
+	<input type="submit" value="Update" name="" class="btn btn-warning">
+	
+
+{% endblock %}

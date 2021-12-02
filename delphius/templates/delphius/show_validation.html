@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">Delphius Interest Validation:</h1>
+
+<h1>{{new_validation}}</h1>
+<br/>
+
+
+
+<div class="card">
+	<div class="card-header">
+		 
+	</div>
+	<div class="card-body">
+		<h5 class="card-title" style="color:orange;"> Validation: {{ new_validation }}</h5>
+		<p class="card-text" style="color: orange;">
+			
+
+{{ new_validation.site }}<br/>
+{{ new_validation.cont_person }}<br/>
+{{ new_validation.cont_no }}<br/>
+{{ new_validation.address }}<br/>
+{{ new_validation.region }}<br/>
+{{ new_validation.status }}<br/>
+{{ new_validation.employee }}<br/>
+{{ new_validation.started }}<br/>
+{{ new_validation.expected }}<br/>
+{{ new_validation.verified }}<br/>
+{{ new_validation.action }}<br/>
+{{ new_validation.latitude }}<br/>
+{{ new_validation.longitude }}<br/>
+<img src="{{ new_validation.lead_image.url }}"><br/>
+
+
+				
+	</div>
+
+
+
+
+
+{% endblock %}

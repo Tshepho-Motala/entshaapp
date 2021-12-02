@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">Delphius Projects:</h1>
+
+<h1>{{new_project}}</h1>
+<br/>
+
+
+
+<div class="card">
+	<div class="card-header">
+		 
+	</div>
+	<div class="card-body">
+		<h5 class="card-title" style="color:orange;"> Project: {{ new_project }}</h5>
+		<p class="card-text" style="color: orange;">
+			
+
+{{ new_project.status }}<br/>
+{{ new_project.employee }}<br/>
+{{ new_project.started }}<br/>
+{{ new_project.expected }}<br/>
+{{ new_project.verified }}<br/>
+{{ new_project.action }}<br/>
+{{ new_pr.site }}<br/>
+{{ new_project.cont_person }}<br/>
+{{ new_project.cont_no }}<br/>
+{{ new_project.address }}<br/>
+{{ new_project.region }}<br/>
+{{ new_project.latitude }}<br/>
+{{ new_project.longitude }}<br/>
+<img src="{{ new_project.lead_image.url }}"><br/>
+
+
+				
+	</div>
+
+
+
+
+
+{% endblock %}
