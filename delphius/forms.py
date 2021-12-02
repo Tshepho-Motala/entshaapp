@@ -63,7 +63,49 @@ class LeadForm(ModelForm):
             'longitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
            # 'lead_image': forms.ImageInput(attrs={'class': 'form-control', 'placeholder': 'Choose an image'}),
 
+        }
 
 
+class ProjectForm(ModelForm):
+    class Meta:
+        model = New_Project
+        fields = ('status', 'employee', 'started', 'expected', 'verified', 'action', 'site', 'cont_person', 'cont_no', 'address', 'region',   'latitude', 'longitude', 'lead_image')
+
+        labels = {
+
+            'status': 'Lead status',
+            'employee': 'Lead brought by',
+            'started': '',
+            'expected': '',
+            'verified': '',
+            'action': '',
+            'site': '',
+            'cont_person': '',
+            'cont_no': '',
+            'address': '',
+            'region': '',
+            'latitude': '',
+            'longitude': '',
+            'lead_image': '',
+
+
+
+        }
+        widgets = {
+
+            'status': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the status'}),
+            'employee': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the employee'}),
+            'started': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date started'}),
+            'expected': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date expected'}),
+            'verified': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date verified'}),
+            'action': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date for action'}),
+            'site': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your site'}),
+            'cont_person': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter contacts person name'}),
+            'cont_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter person number'}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the address'}),
+            'region': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the region'}),    
+            'latitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the latitude'}),
+            'longitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
+           # 'lead_image': forms.ImageInput(attrs={'class': 'form-control', 'placeholder': 'Choose an image'}),
 
         }
