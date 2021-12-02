@@ -24,7 +24,7 @@ class JobForm(forms.ModelForm):
 class LeadForm(ModelForm):
     class Meta:
         model = New_Lead
-        fields = ('site', 'cont_person', 'cont_no', 'address', 'region', 'status', 'employee', 'started', 'expected', 'verified', 'action')
+        fields = ('site', 'cont_person', 'cont_no', 'address', 'region', 'status', 'employee', 'started', 'expected', 'verified', 'action', 'latitude', 'longitude', 'lead_image')
 
         labels = {
 
@@ -33,12 +33,15 @@ class LeadForm(ModelForm):
             'cont_no': '',
             'address': '',
             'region': '',
-            'status': 'Select the status',
-            'employee': 'Select the employee',
+            'status': 'Lead status',
+            'employee': 'Lead brought by',
             'started': '',
             'expected': '',
             'verified': '',
             'action': '',
+            'latitude': '',
+            'longitude': '',
+            'lead_image': '',
 
 
 
@@ -56,6 +59,10 @@ class LeadForm(ModelForm):
             'expected': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date expected'}),
             'verified': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date verified'}),
             'action': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter the date for action'}),
+            'latitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the latitude'}),
+            'longitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
+           # 'lead_image': forms.ImageInput(attrs={'class': 'form-control', 'placeholder': 'Choose an image'}),
+
 
 
 

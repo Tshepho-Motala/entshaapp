@@ -28,6 +28,9 @@ class New_Lead(models.Model):
     expected = models.DateTimeField(null=True)
     verified = models.DateTimeField(null=True)
     action = models.DateTimeField(null=True)
+    latitude = models.CharField(max_length=200, null=True)
+    longitude = models.CharField(max_length=200, null=True)
+    lead_image = models.ImageField(null=True, blank=True, upload_to="images/")
     created = models.DateTimeField(auto_now_add=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
