@@ -79,74 +79,70 @@ class New_Project(models.Model):
 
 
 
-class Public_PR(models.Model):
-    title = models.CharField(max_length=50, null=True)
-
-    def __str__(self):
-       return self.title 
-
-class Public_P(models.Model):
-    title = models.CharField(max_length=50, null=True)
-
-    def __str__(self):
-       return self.title  
-
-class Municipality(models.Model):
-    title = models.CharField(max_length=50, null=True)
-
-    def __str__(self):
-       return self.title                     
-
-class Interest(models.Model):
+class Dawn_Dusk(models.Model):
     title = models.CharField(max_length=50, null=True)
 
     def __str__(self):
        return self.title
 
-class Shareable(models.Model):
+
+class PPR(models.Model):
+    title = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+       return self.title
+
+class PPL(models.Model):
+    title = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+       return self.title
+
+class MAR(models.Model):
+    title = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+       return self.title     
+
+class DCI(models.Model):
+    title = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+       return self.title            
+
+class SS(models.Model):
     title = models.CharField(max_length=50, null=True)
 
     def __str__(self):
        return self.title  
 
-class Operator(models.Model):
+class OI(models.Model):
     title = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-       return self.title   
-
-class Months(models.Model):
-    title = models.CharField(max_length=50, null=True)
-
-    def __str__(self):
-       return self.title                
-
+       return self.title         
 
 class New_Validation(models.Model):
-
+    
     site = models.CharField(max_length=200, null=True)
     cont_person = models.CharField(max_length=200, null=True)
-    cont_no = models.CharField(max_length=13, null=True)
+    cont_no = models.CharField(max_length=200, null=True)
     address = models.CharField(max_length=200, null=True)
     region = models.CharField(max_length=200, null=True)
     latitude = models.CharField(max_length=200, null=True)
     longitude = models.CharField(max_length=200, null=True)
-    solution = models.CharField(max_length=200, null=True)
-    duration_ppr = models.CharField(max_length=200, null=True)
-    public_pr = models.ForeignKey(Public_PR,on_delete=models.CASCADE, null=True)
-    public_p = models.ForeignKey(Public_P,on_delete=models.CASCADE, null=True)
-    municapal_approval = models.ForeignKey(Municipality,on_delete=models.CASCADE, null=True)
+    solution_type = models.CharField(max_length=200, null=True)
+    est_duration = models.CharField(max_length=200, null=True)
+    ppr = models.ForeignKey(PPR,on_delete=models.CASCADE, null=True)
+    ppl = models.ForeignKey(PPL,on_delete=models.CASCADE, null=True)
+    mar = models.ForeignKey(MAR,on_delete=models.CASCADE, null=True)
     est_municipal = models.CharField(max_length=200, null=True)
-    power_connection = models.CharField(max_length=200, null=True)
-    dusk_dawn = models.ForeignKey(Months,on_delete=models.CASCADE, null=True)
-    del_connect_interest = models.ForeignKey(Interest,on_delete=models.CASCADE, null=True)
-    solution_share = models.ForeignKey(Shareable,on_delete=models.CASCADE, null=True)
-    Operator_interest = models.ForeignKey(Operator,on_delete=models.CASCADE, null=True)
+    pce = models.CharField(max_length=200, null=True)
+    dawn_dusk = models.ForeignKey(Dawn_Dusk,on_delete=models.CASCADE, null=True)
+    dci = models.ForeignKey(DCI,on_delete=models.CASCADE, null=True)
+    ss = models.ForeignKey(SS,on_delete=models.CASCADE, null=True)
+    esc = models.CharField(max_length=200, null=True)
+    oi = models.ForeignKey(OI,on_delete=models.CASCADE, null=True)
     lead_image = models.ImageField(null=True, blank=True, upload_to="images/")
-    created = models.DateTimeField(auto_now_add=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
 
-    def __str__(self):
-        return self.site          
-    
 
