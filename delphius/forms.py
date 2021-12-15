@@ -151,6 +151,7 @@ class ValidationForm(ModelForm):
             'region': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the region'}),
             'latitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the latitude'}),
             'longitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
+            'solution_type': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the Solution type'}),
             'est_duration': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the Duration of Public Participation'}),
             'ppr': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Public Participation Required'}),
             'ppl': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Public Participation Likelihood'}),
@@ -165,6 +166,107 @@ class ValidationForm(ModelForm):
            #'lead_image': forms.ImageField(attrs={'class': 'form-control', 'placeholder': 'Choose an image'}),
 
         }        
+
+
+
+class RadioForm(ModelForm):
+    class Meta:
+        model = New_Validation
+        fields = ('site', 'cont_person', 'cont_no', 'address', 'region', 'latitude', 'longitude', 'solution_type', 'est_duration', 'ppr', 'ppl', 'mar', 'est_municipal', 'pce', 'dawn_dusk', 'dci', 'ss', 'esc', 'oi', 'lead_image')
+
+        labels = {
+
+            'site': '',
+            'cont_person': '',
+            'cont_no': '',
+            'address': '',
+            'region': '',
+            'latitude': '',
+            'longitude': '',
+            'solution_type': '',
+            'est_duration': '',
+            'ppr': 'Public Participation Required',
+            'ppl': 'Public Participation Likelihood',
+            'mar': 'Municipal Approval Required',
+            'est_municipal': '',
+            'pce': '',
+            'dawn_dusk': ' Dawn to Dusk Estimate',
+            'dci': 'Del Connect Estimate ',
+            'ss': 'Solution Shareable ',
+            'esc': '',
+            'oi': 'Operator Interest',
+            'lead_image': ' Attachments',
+
+
+
+        }
+        widgets = {
+
+            'site': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your site'}),
+            'cont_person': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter contacts person name'}),
+            'cont_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter person number'}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the address'}),
+            'region': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the region'}),
+            'latitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the latitude'}),
+            'longitude': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
+            'solution_type': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the Solution type'}),
+            'est_duration': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the Duration of Public Participation'}),
+            'ppr': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Public Participation Required'}),
+            'ppl': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Public Participation Likelihood'}),
+            'mar': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Municipal Approval Required'}),
+            'est_municipal': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your Estimated Municipal in days'}),
+            'pce': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your Power Connection Estimate'}),
+            'dawn_dusk': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Dawn to Dusk Estimate'}),
+            'dci': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Del Connect Interested'}),
+            'ss': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Solution Shareable'}),
+            'esc': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your Estimated Solution Cost'}),
+            'oi': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select the Operator Interest'}),
+           #'lead_image': forms.ImageField(attrs={'class': 'form-control', 'placeholder': 'Choose an image'}),
+
+        }       
+
+
+class ILOForm(ModelForm):
+    class Meta:
+        model = ILO_Core
+        fields = ('date', 'assignment', 'assigned_by', 'location', 'contractor', 'access_ref', 'pic_ref', 'photo1', 'p1_description', 'photo2', 'p2_description', 'photo3', 'p3_description', 'photo4', 'p4_description', 'extra_photos', 'p5_description')
+
+        labels = {
+
+            'date' : '',
+            'assignment' : '',
+            'assigned_by' : '',
+            'location' : '',
+            'contractor' : '',
+            'access_ref' : '',
+            'pic_ref' : '',
+            'photo1' : '',
+            'p1_description' : '',
+            'photo2' : '',
+            'p2_description' : '',
+            'photo3' : '',
+            'p3_description' : '',
+            'photo4' : '',
+            'p4_description' : '',
+            'extra_photos' : '',
+            'p5_description' : ''
+
+
+
+        }
+
+        widgets = {
+
+            'date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your date'}),
+            'assignment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter assignment'}),
+            'assigned_by': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter assigned_by'}),
+            'location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the region'}),
+            'contractor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the latitude'}),
+            'access_ref': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the longitude'}),
+            
+
+        }       
+
 
 
 

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">ILO Core:</h1>
+
+<h1>{{ilo_core}}</h1>
+<br/>
+
+
+
+<div class="card">
+	<div class="card-header">
+		 
+	</div>
+	<div class="card-body">
+		<h5 class="card-title" style="color:orange;"> ILO Core: {{ ilo_core }}</h5>
+		<p class="card-text" style="color: orange;">
+			
+
+{{ ilo_core.site }}<br/>
+{{ ilo_core.cont_person }}<br/>
+{{ ilo_core.cont_no }}<br/>
+{{ ilo_core.address }}<br/>
+{{ ilo_core.region }}<br/>
+{{ ilo_core.status }}<br/>
+{{ ilo_core.employee }}<br/>
+{{ ilo_core.started }}<br/>
+{{ ilo_core.expected }}<br/>
+{{ ilo_core.verified }}<br/>
+{{ ilo_core.action }}<br/>
+{{ ilo_core.latitude }}<br/>
+{{ ilo_core.longitude }}<br/>
+<img src="{{ new_lead.lead_image.url }}"><br/>
+
+
+				
+	</div>
+
+
+
+
+
+{% endblock %}

@@ -9,6 +9,34 @@ from datetime import datetime
 
 # Create your views here.
 
+def add_ILO(request):
+
+    submitted = False
+    if request.method == "POST":
+        form = RadioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/delphius/add_ILO?submitted=True')
+    else:
+        form = RadioForm
+        if 'submitted' in request.GET:
+            submitted = True       
+    return render(request, 'delphius/add_ILO.html', {'form':form, 'submitted':submitted}) 
+
+def add_radio(request):
+    submitted = False
+    if request.method == "POST":
+        form = RadioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/delphius/add_radio?submitted=True')
+    else:
+        form = RadioForm
+        if 'submitted' in request.GET:
+            submitted = True       
+    return render(request, 'delphius/add_radio.html', {'form':form, 'submitted':submitted})
+
+
 def add_project(request):
     submitted = False
     if request.method == "POST":
@@ -62,7 +90,11 @@ def show_forms(request):
 
 def show_lead(request, New_Lead_id):
     new_lead = New_Lead.objects.get(pk=New_Lead_id)    
-    return render(request, 'delphius/show_leads.html', {'new_lead':new_lead})    
+    return render(request, 'delphius/show_leads.html', {'new_lead':new_lead}) 
+
+def show_ILO(request, New_ILO_id):
+    new_lead = New_Lead.objects.get(pk=New_Lead_id)    
+    return render(request, 'delphius/show_leads.html', {'new_lead':new_lead})        
 
 def view_lead(request):
     view_lead = New_Lead.objects.all()
@@ -99,7 +131,7 @@ def show_validation(request, New_Validation_id):
     return render(request, 'delphius/show_validation.html', {'new_validation':new_validation})    
 
 def view_validation(request):
-    view_lead = New_Validation.objects.all()
+    view_validation = New_Validation.objects.all()
     return render(request, 'delphius/validations.html', {'view_validation':view_validation})  
 
 def update_validation(request, New_Validation_id):
@@ -108,4 +140,22 @@ def update_validation(request, New_Validation_id):
     if form.is_valid():
         form.save()
         return redirect('view-validation')
-    return render(request, 'delphius/update_validation.html', {'new_validation':new_validation, 'form': form})                       
+    return render(request, 'delphius/update_validation.html', {'new_validation':new_validation, 'form': form})  
+
+
+
+def show_radio(request, Radio_Planner_id):
+    radio_planner = Radio_Planner.objects.get(pk=Radio_Planner_id)    
+    return render(request, 'delphius/show_radio.html', {'radio_planner':radio_planner})    
+
+def view_radio(request):
+    view_radio = Radio_Planner.objects.all()
+    return render(request, 'delphius/radio.html', {'view_radio':view_radio})  
+
+def update_radio(request, Radio_Planner_id):
+    radio_planner = Radio_Planner.objects.get(pk=Radio_Planner_id)
+    form = RadioForm(request.POST or None, instance=radio_planner)
+    if form.is_valid():
+        form.save()
+        return redirect('view-radio')
+    return render(request, 'delphius/update_radio.html', {'radio_planner':radio_planner, 'form': form})                          

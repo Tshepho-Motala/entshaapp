@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">View of all Radio Planner</h1>
+
+<table class="table table-borderless table-striped table-hover">
+{% for Radio_Planner in  radio_planner %}
+<tr>
+<td style="color:orange;"><a href="{% url 'show-lead' New_Lead.id %}">{{radio_planner}}</a></td>
+<td align="right"><a href="{% url 'update-lead' New_Lead.id %}" class="btn btn-outline-secondary btn-sm"> Update</a> </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'show-forms' %}" class="btn btn-warning"> Back to forms </a>
+
+
+
+
+{% endblock %}

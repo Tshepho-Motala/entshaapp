@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">View of all ILO Core</h1>
+
+<table class="table table-borderless table-striped table-hover">
+{% for ILO_Core in  view_ILO_Core %}
+<tr>
+<td style="color:orange;"><a href="{% url 'show-lead' New_Lead.id %}">{{ILO_Core}}</a></td>
+<td align="right"><a href="{% url 'update-lead' New_Lead.id %}" class="btn btn-outline-secondary btn-sm"> Update</a> </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'show-forms' %}" class="btn btn-warning"> Back to forms </a>
+
+
+
+
+{% endblock %}

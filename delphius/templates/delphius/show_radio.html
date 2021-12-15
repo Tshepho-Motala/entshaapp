@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br />
+
+<h1 style="color: orange;">Radio Planner:</h1>
+
+<h1>{{radio_planner}}</h1>
+<br/>
+
+
+
+<div class="card">
+	<div class="card-header">
+		 
+	</div>
+	<div class="card-body">
+		<h5 class="card-title" style="color:orange;"> Project: {{ radio_planner }}</h5>
+		<p class="card-text" style="color: orange;">
+			
+
+{{ radio_planner.site }}<br/>
+{{ radio_planner.address }}<br/>
+{{ radio_planner.region }}<br/>
+{{ radio_planner.latitude }}<br/>
+{{ radio_planner.longitude }}<br/>
+{{ radio_planner.oi }}<br/>
+{{ radio_planner.employee }}<br/>
+{{ radio_planner.solution_type }}<br/>
+{{ radio_planner.site_priority }}<br/>
+{{ radio_planner.oc }}<br/>
+{{ radio_planner.athol }}<br/>
+{{ radio_planner.ss }}<br/>
+{{ radio_planner.voa }}<br/>
+{{ radio_planner.verified }}<br/>
+{{ radio_planner.oi }}<br/>
+{{ radio_planner.date}}<br/>
+{{ radio_planner.rps}}<br/>
+<img src="{{ radio_planner.lead_image.url }}"><br/>
+
+
+				
+	</div>
+
+
+
+
+
+{% endblock %}
